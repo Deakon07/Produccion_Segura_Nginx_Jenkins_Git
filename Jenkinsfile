@@ -16,7 +16,7 @@ pipeline {
                     // Ejecutar el contenedor NGINX con el nuevo index.html
                     sh '''
                     docker run -d --name web-server --network nginx-network \
-                    -v "$WORKSPACE/index.html":/usr/share/nginx/html/index.html nginx
+                    -v "$WORKSPACE/index.html:/usr/share/nginx/html/index.html" nginx
                     '''
                 }
             }
